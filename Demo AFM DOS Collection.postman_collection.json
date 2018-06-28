@@ -1,0 +1,62 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Demo AFM DOS Collection",
+		"_postman_id": "b7ad15bb-3299-6402-d438-8d0d0ff7c2b3",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "PUT - Device DOS Profile Update",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/dos/device-config/~Common~dos-device-config?ver=11.6.0",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"dos-device-config\",\n    \"dosDeviceVector\": [\n        {\n            \"name\": \"arp-flood\",\n            \"defaultInternalRateLimit\": \"25\",\n            \"detectionThresholdPercent\": \"100\",\n            \"detectionThresholdPps\": \"25\"\n        }\n]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - Device DOS Profile Vandis",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/dos/device-config/~Common~dos-device-config?ver=11.6.0",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{\n    \"name\": \"dos-device-config\",\n    \"dosDeviceVector\": [\n    {\n                    \"name\": \"bad-ver\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n     {\n                    \"name\": \"hdr-len-gt-l2-len\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n    {\n                    \"name\": \"hdr-len-too-short\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n    {\n                    \"name\": \"ip-err-chksum\",\n                    \"defaultInternalRateLimit\": \"100\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"100\"\n                },\n    {\n                    \"name\": \"ip-bad-src\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n                \n                {\n                    \"name\": \"ip-frag-flood\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n                {\n                    \"name\": \"ip-len-gt-l2-len\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n      {\n                    \"name\": \"l2-len-ggt-ip-len\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n    {\n                    \"name\": \"no-l4\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n    {\n                    \"name\": \"bad-tcp-chksum\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n     {\n                    \"name\": \"bad-tcp-flags-all-set\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n    {\n                    \"name\": \"tcp-hdr-len-gt-l2-len\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n    {\n                    \"name\": \"fin-only-set\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n    {\n                    \"name\": \"syn-and-fin-set\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n    {\n                    \"name\": \"tcp-hdr-len-too-short\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                },\n     {\n                    \"name\": \"icmpv4-flood\",\n                    \"defaultInternalRateLimit\": \"25\",\n                    \"detectionThresholdPercent\": \"100\",\n                    \"detectionThresholdPps\": \"25\"\n                }\n]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "https://192.168.1.99/mgmt/tm/security/dos/device-config/stats",
+			"request": {
+				"url": "https://192.168.1.99/mgmt/tm/security/dos/device-config/stats",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

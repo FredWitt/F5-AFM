@@ -1,0 +1,391 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Demo AFM Collection",
+		"_postman_id": "8c2cfe7f-9131-11ec-4d13-c92dc4f1f6f1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "POST New Address List",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/address-list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"EvilHosts\",\"addresses\": \n[\n{\"name\": \"10.128.10.1\"},\n{\"name\": \"10.20.30.6\"},\n{\"name\": \"10.20.30.7\"}\n]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Address Lists",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/address-list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"EvilPorts\",\n          \n            \"ports\": [\n                {\n                    \"name\": \"22\"\n                },\n                {\n                    \"name\": \"23\"\n                }\n            ]\n        }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get - EvilHosts - Address List",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/address-list/~Common~EvilHosts",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"EvilHosts\",\"addresses\": \n[\n{\"name\": \"10.128.10.1\"},\n{\"name\": \"10.20.30.6\"},\n{\"name\": \"10.20.30.7\"}\n]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch Add Host - EvilHosts - Address List",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/address-list/~Common~EvilHosts",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"EvilHosts\",\"addresses\": \n[\n{\"name\": \"10.128.10.1\"},\n{\"name\": \"10.20.30.6\"},\n{\"name\": \"10.20.30.7\"}\n]\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST New Port List",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/port-list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"EvilPorts\",\n          \n            \"ports\": [\n                {\n                    \"name\": \"22\"\n                },\n                {\n                    \"name\": \"23\"\n                }\n            ]\n        }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Ports Lists",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/port-list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"EvilPorts\",\n          \n            \"ports\": [\n                {\n                    \"name\": \"22\"\n                },\n                {\n                    \"name\": \"23\"\n                }\n            ]\n        }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST New Rule Part 1",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/rule-list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"EvilBlockRule\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Rules Part 1",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/rule-list",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"EvilBlockRule\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST New Rule Part2",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/rule-list/~Common~EvilBlockRule/rules",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"EvilBlockRule1\",\n  \"place-before\": \"first\",\n  \"action\": \"drop\",\n  \"ipProtocol\": \"icmp\",\n  \"iruleSampleRate\": 1,\n  \"log\": \"no\",\n  \"status\": \"enabled\",\n   \"source\": {\n        \"addressLists\": [\n            \"/Common/EvilHosts\"\n        ]\n       \n    }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Rules Part 2",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/rule-list/~Common~EvilBlockRule/rules",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"EvilBlockRule1\",\n  \"place-before\": \"first\",\n  \"action\": \"accept\",\n  \"ipProtocol\": \"tcp\",\n  \"iruleSampleRate\": 1,\n  \"log\": \"no\",\n  \"status\": \"enabled\",\n   \"source\": {\n        \"addressLists\": [\n            \"/Common/EvilHosts\"\n        ],\n        \"portLists\": [\n            \"/Common/EvilPorts\"\n        ]\n    }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST New Policy Part 1",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/policy",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"EvilBlockPolicy\"}\n "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get New Policy Part 1",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/policy",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"EvilBlockPolicy\"}\n "
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Post New Policy Part 2",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/policy/EvilBlockPolicy/rules",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"EvilBlockPolicy1\",\n  \"place-before\": \"first\",\n  \"action\": \"accept\",\n  \"ipProtocol\": \"icmp\",\n  \"iruleSampleRate\": 1,\n  \"log\": \"no\",\n  \"status\": \"enabled\",\n  \"ruleList\": \"/Common/EvilBlockRule\"\n \n}"
+				},
+				"description": "Maps a rule-list to a policy"
+			},
+			"response": []
+		},
+		{
+			"name": "Post New Policy Part 3",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/policy/EvilBlockPolicy/rules",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"EvilBlockPolicy2\",\n  \"place-before\": \"first\",\n  \"action\": \"accept\",\n  \"ipProtocol\": \"tcp\",\n  \"iruleSampleRate\": 1,\n  \"log\": \"no\",\n  \"status\": \"enabled\",\n  \"destination\": {\n        \"addressLists\": [\n            \"/Common/EvilHosts\"\n        ],\n        \"portLists\": [\n            \"/Common/EvilPorts\"\n        ]\n    },\n  \"source\": {\n        \"identity\": {}\n    }\n}"
+				},
+				"description": "*This is optional to not map a policy to a previously defined rule-list, rather define the policy"
+			},
+			"response": []
+		},
+		{
+			"name": "GET New Policy Part 2",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/policy/EvilBlockPolicy/rules",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"name\": \"EvilBlockPolicy1\",\n  \"place-before\": \"first\",\n  \"action\": \"accept\",\n  \"ipProtocol\": \"icmp\",\n  \"iruleSampleRate\": 1,\n  \"log\": \"no\",\n  \"status\": \"enabled\",\n  \"ruleList\": \"/Common/EvilBlockRule\"\n \n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH Global-EvilBlock",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/global-rules",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"enforcedPolicy\": \"/Common/EvilBlockPolicy\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET Global Policy",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/firewall/global-rules",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"enforcedPolicy\": \"/Common/EvilBlockPolicy\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Patch DNS Resolver",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/net/dns-resolver",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"Test-DNS2\",\n            \"answerDefaultZones\": \"no\",\n            \"randomizeQueryNameCase\": \"yes\",\n            \"routeDomain\": \"/Common/0\",\n            \"useIpv4\": \"yes\",\n            \"useIpv6\": \"yes\",\n            \"useTcp\": \"yes\",\n            \"useUdp\": \"yes\"\n        }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST - New IPI Feed",
+			"request": {
+				"url": "https://10.128.1.245/mgmt/tm/security/ip-intelligence/feed-list",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"name\": \"API_Feed2\",\n   \"feeds\": [\n                {\n                    \"name\": \"API2\",\n                    \"defaultBlacklistCategory\": \"/Common/spam_sources\",\n                    \"defaultListType\": \"blacklist\",\n                    \"poll\": {\n                        \"interval\": \"default\",\n                        \"password\": \"123\",\n                        \"url\": \"https://www.fredblock.com\",\n                        \"user\": \"fred\"\n                    }\n                }\n            ]\n        }\n        "
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}

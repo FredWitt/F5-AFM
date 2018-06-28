@@ -1,0 +1,445 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Big-IQ AFM Collection",
+		"_postman_id": "3d276c70-77e3-e823-338e-84ad7374f4c8",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Address Lists",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/address-lists",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "        {\n            \"addresses\": [\n                {\n                    \"address\": \"10.128.10.1\",\n                    \"description\": \"Test\"\n                }\n            ],\n            \"partition\": \"Common\",\n            \"name\": \"API_Host\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Post New Address List",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/address-lists",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "        {\n            \"addresses\": [\n                {\n                    \"address\": \"10.128.10.1\",\n                    \"description\": \"Test\"\n                }\n            ],\n            \"partition\": \"Common\",\n            \"name\": \"API_Created_Host\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Address List (post creation)",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/address-lists",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "        {\n            \"addresses\": [\n                {\n                    \"address\": \"10.128.10.1\",\n                    \"description\": \"Test\"\n                }\n            ],\n            \"partition\": \"Common\",\n            \"name\": \"API_QBR_Host\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PUT - Update Address List",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/address-lists/41dfdf8e-51e9-34de-93ae-d98dd800ff94",
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "     {\n    \"addresses\": [\n        {\"address\": \"10.128.10.1\",\"description\": \"Test2\"},\n        {\"address\": \"10.128.10.99\",\"description\": \"Test99\"},\n        {\"address\": \"10.128.10.89\",\"description\": \"Test89\"}\n    ],\n            \"partition\": \"Common\",\n            \"name\": \"API_Created_Host\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Specific Address List",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/address-lists/41dfdf8e-51e9-34de-93ae-d98dd800ff94",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						"        {\n            \"addresses\": [\n                {\n                    \"address\": \"10.128.10.1\",\"description\": \"Test\",\n                  \"address\": \"10.128.10.1\",\"description\": \"Test2\"\n                }\n            ],\n            \"partition\": \"Common\",\n            \"name\": \"API_Created_Host\"\n}\n"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Port List",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/port-lists",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "        {\n            \"addresses\": [\n                {\n                    \"address\": \"10.128.10.1\",\n                    \"description\": \"Test\"\n                }\n            ],\n            \"partition\": \"Common\",\n            \"name\": \"API_Host\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Post New Port List",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/port-lists",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n            \"ports\": [\n                {\n                    \"port\": \"22\",\n                    \"description\": \"SSH\"\n                },\n                {\n                    \"port\": \"23\",\n                    \"description\": \"Telnet\"\n                }\n            ],\n      \"partition\": \"Common\",\n                         \"name\": \"API__Created_Ports\"\n }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Port List (post creation)",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/port-lists",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n            \"ports\": [\n                {\n                    \"port\": \"22\",\n                    \"description\": \"SSH\"\n                },\n                {\n                    \"port\": \"23\",\n                    \"description\": \"Telnet\"\n                }\n            ],\n      \"partition\": \"Common\",\n                         \"name\": \"API__Created_Ports\"\n }"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "Get Rule List",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/rule-lists",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "        {\n            \"addresses\": [\n                {\n                    \"address\": \"10.128.10.1\",\n                    \"description\": \"Test\"\n                }\n            ],\n            \"partition\": \"Common\",\n            \"name\": \"API_Host\"\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Rule List Name",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/rule-lists",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"partition\": \"Common\",\"name\": \"API_Created_Rule\"}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Rule List Name (Post Name)",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/rule-lists",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"partition\": \"Common\",\"name\": \"API_Created_Rule\"}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST - Rule List Rules",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/rule-lists/664b209d-a3c4-3827-870c-93228aa34032/rules",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n            \"action\": \"drop\",\n            \"log\": false,\n            \"protocol\": \"tcp\",\n            \"source\": {\n                \"addressListReferences\": [\n                    {\n                        \"link\": \"https://localhost/mgmt/cm/firewall/working-config/address-lists/41dfdf8e-51e9-34de-93ae-d98dd800ff94\"\n                    }\n                ]\n            },\n            \"state\": \"enabled\",\n            \"name\": \"API_Created_Rule1\"}\n\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Rules (Post Rules)",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/rule-lists/664b209d-a3c4-3827-870c-93228aa34032/rules",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						" {\n            \"action\": \"drop\",\n            \"log\": false,\n            \"protocol\": \"tcp\",\n            \"source\": {\n                \"addressListReferences\": [\n                    {\n                        \"link\": \"https://localhost/mgmt/cm/firewall/working-config/address-lists/41dfdf8e-51e9-34de-93ae-d98dd800ff94\"\n                    }\n                ]\n            },\n            \"state\": \"enabled\",\n            \"name\": \"API_Created_Rule1\"}\n\n"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Policies",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/policies",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": " {\n            \"action\": \"drop\",\n            \"log\": false,\n            \"protocol\": \"tcp\",\n            \"source\": {\n                \"addressListReferences\": [\n                    {\n                        \"link\": \"https://localhost/mgmt/cm/firewall/working-config/address-lists/41dfdf8e-51e9-34de-93ae-d98dd800ff94\"\n                    }\n                ]\n            },\n            \"state\": \"enabled\",\n            \"name\": \"API_Created_Rule1\"}\n\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST - New Policy",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/policies",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\n {\"partition\": \"Common\", \"name\": \"API_Created_Policy\"}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST - New Policy Rule Reference",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/policies/eeff8d53-e978-3f81-a00c-875f33599fcb/rules",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n            \"state\": \"enabled\",\n            \"ruleListReference\": {\n                \"link\": \"https://localhost/mgmt/cm/firewall/working-config/rule-lists/664b209d-a3c4-3827-870c-93228aa34032\"\n            },\n            \"name\": \"Reference_To_API_Created_Rule\"}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - New Policy Rule (Post reference)",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/policies/eeff8d53-e978-3f81-a00c-875f33599fcb/rules",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						"{\n            \"state\": \"enabled\",\n            \"ruleListReference\": {\n                \"link\": \"https://localhost/mgmt/cm/firewall/working-config/rule-lists/664b209d-a3c4-3827-870c-93228aa34032\"\n            },\n            \"name\": \"Reference_To_API_Created_Rule\"}"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - All Firewalls",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/firewalls",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						" {\n            \"action\": \"drop\",\n            \"log\": false,\n            \"protocol\": \"tcp\",\n            \"source\": {\n                \"addressListReferences\": [\n                    {\n                        \"link\": \"https://localhost/mgmt/cm/firewall/working-config/address-lists/41dfdf8e-51e9-34de-93ae-d98dd800ff94\"\n                    }\n                ]\n            },\n            \"state\": \"enabled\",\n            \"name\": \"API_Created_Rule1\"}\n\n"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Global Policy For Demo Device",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/firewalls/e42edcc5-2cb1-3b07-89b3-a4cd98902424",
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						"{\n            \"state\": \"enabled\",\n            \"ruleListReference\": {\n                \"link\": \"https://localhost/mgmt/cm/firewall/working-config/rule-lists/664b209d-a3c4-3827-870c-93228aa34032\"\n            },\n            \"name\": \"Reference_To_API_Created_Rule\"}"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "PATCH - Apply Global Policy For Demo Device",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/firewalls/e42edcc5-2cb1-3b07-89b3-a4cd98902424",
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firewallType\": \"global\",\n    \"enforcedPolicyReference\": {\n        \"link\": \"https://localhost/mgmt/cm/firewall/working-config/policies/eeff8d53-e978-3f81-a00c-875f33599fcb\"\n    }\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST New AFM Deploymnet Task",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/tasks/deploy-configuration",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"createChildTasks\": true,\n    \"description\": \"Policy Deploy\",\n    \"deviceReferences\": [\n        {\n            \"link\": \"https://localhost/mgmt/shared/resolver/device-groups/cm-firewall-allFirewallDevices/devices/5db9f536-8949-4799-a0c9-7b8ccaf2cd5f\"\n        }\n    ],\n    \"name\": \"Policy Deploy\",\n    \"skipDistribution\": false\n}\n"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Specific Policy",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/policies?$filter=('name'+eq+'DSCP')&$select=name,selfLink",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "GET - Specific Devices",
+			"request": {
+				"url": "https://10.128.1.200/mgmt/cm/firewall/working-config/firewalls?$filter=('deviceReference/name'+eq+'bigip.f5demo.com')+and+(firewallType+eq+'vip') &$select=name,firewallType,selfLink,deviceReference",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
